@@ -1,0 +1,32 @@
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/demo"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/buy"
+  to = "/sales.html"
+  status = 200
+
+[[redirects]]
+  from = "/intake"
+  to = "/intake.html"
+  status = 200
+
+[[redirects]]
+  from = "/thanks"
+  to = "/thanks.html"
+  status = 200
+
+[[redirects]]
+  from = "/marketing"
+  to = "/marketing.html"
+  status = 200
+
+[[redirects]]
+  from = "/audit"
+  to = "/audit.html"
+  status = 200

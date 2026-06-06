@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Roof Quote Flyer Preview</title>
+    <link rel="stylesheet" href="./marketing.css" />
+  </head>
+  <body>
+    <header class="kit-nav">
+      <a class="kit-brand" href="./marketing.html" aria-label="RoofQuote marketing kit">
+        <span id="brandMark">RQ</span>
+        <strong id="brandName">RoofQuote Sprint</strong>
+      </a>
+      <nav aria-label="Marketing kit actions">
+        <a id="demoNavLink" href="./index.html#estimator">Quote page</a>
+        <button id="copyLinkButton" type="button">Copy link</button>
+        <button id="copyTextButton" type="button">Copy ad text</button>
+        <button id="printButton" type="button">Print</button>
+      </nav>
+    </header>
+
+    <main class="kit-shell">
+      <section class="kit-panel">
+        <div class="kit-copy">
+          <p class="eyebrow">QR-ready quote link</p>
+          <h1 id="headline">Get a roof quote range before a sales call.</h1>
+          <p id="subhead">
+            Scan the code, enter your roof details, and see good / better / best options from a local roofing team.
+          </p>
+          <div class="mini-proof">
+            <span>Ballpark range</span>
+            <span>Project details captured</span>
+            <span>Fast callback</span>
+          </div>
+        </div>
+
+        <aside class="qr-card" aria-label="Printable quote QR card">
+          <div class="qr-heading">
+            <strong id="flyerCompany">RoofQuote Sprint</strong>
+            <span id="flyerArea">Instant roof estimate</span>
+          </div>
+          <img id="qrImage" alt="QR code for the instant roof quote page" />
+          <p id="shortUrl">Open the instant quote page</p>
+          <a id="quoteLink" href="./index.html#estimator">Open quote page</a>
+        </aside>
+      </section>
+
+      <section class="print-sheet" aria-label="Printable flyer">
+        <article class="flyer">
+          <div class="flyer-top">
+            <span id="flyerMark">RQ</span>
+            <div>
+              <strong id="printCompany">RoofQuote Sprint</strong>
+              <small id="printArea">Instant roof estimate</small>
+            </div>
+          </div>
+          <h2 id="printHeadline">Need a roof estimate?</h2>
+          <p id="printSubhead">
+            Scan for a ballpark roof range and proposal options before booking a sales call.
+          </p>
+          <img id="printQrImage" alt="QR code for printed instant quote flyer" />
+          <p class="phone-line" id="printPhone">Fast callback after your quote request.</p>
+          <p class="fine-print">Final pricing depends on measurement, inspection, material choice, and site conditions.</p>
+        </article>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script>window.ROOFQUOTE_CONFIG = {"manualPaymentMode":true};</script>
+    <script src="./marketing.js"></script>
+  </body>
+</html>

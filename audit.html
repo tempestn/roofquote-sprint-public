@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RoofQuote Estimate Flow Audit</title>
+    <link rel="stylesheet" href="./audit.css" />
+  </head>
+  <body>
+    <header class="audit-nav">
+      <a class="audit-brand" href="./audit.html" aria-label="RoofQuote estimate flow audit">
+        <span id="brandMark">RQ</span>
+        <strong id="brandName">Estimate Flow Audit</strong>
+      </a>
+      <nav aria-label="Audit actions">
+        <a id="salesLink" href="./sales.html">Setup offer</a>
+        <a id="demoLink" class="nav-cta" href="./index.html#estimator">View quote page</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="audit-hero">
+        <div class="audit-copy">
+          <p class="eyebrow">3-point estimate-flow audit</p>
+          <h1 id="headline">Turn your estimate CTA into a faster quote lead.</h1>
+          <p id="summaryText">
+            A quick review of where an instant quote link, proposal preview, and QR-ready flyer can fit before a sales call.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-link" id="quotePageLink" href="./index.html#estimator">Open personalized quote page</a>
+            <a class="secondary-link" id="flyerLink" href="./marketing.html">Preview QR flyer</a>
+          </div>
+        </div>
+
+        <aside class="audit-snapshot" aria-label="Audit snapshot">
+          <img src="./assets/roof-estimator-hero.png" alt="Aerial roof with measurement overlay" />
+          <div class="snapshot-list">
+            <div>
+              <span>Current CTA</span>
+              <strong id="ctaSeen">Free estimate</strong>
+            </div>
+            <div>
+              <span>Best fit</span>
+              <strong id="fitLabel">Website estimate button</strong>
+            </div>
+            <div>
+              <span>Offer</span>
+              <strong>$109 setup</strong>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="audit-band" aria-labelledby="auditTitle">
+        <div>
+          <p class="eyebrow">What I would change first</p>
+          <h2 id="auditTitle">The small wedge: show a range before the form.</h2>
+        </div>
+        <div class="audit-grid">
+          <article>
+            <span>01</span>
+            <h3>Replace the cold form with a quote link</h3>
+            <p id="ctaRecommendation">Send estimate visitors into a page that asks for roof basics and gives a ballpark range.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Capture lead intent with context</h3>
+            <p>Save roof area, material, pitch, timeline, and contact info so the callback starts with a real job picture.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Use QR for local campaigns</h3>
+            <p>Put the same quote link on door hangers, yard signs, postcards, local ads, and referral partner handouts.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="mockup-band" aria-labelledby="mockupTitle">
+        <div>
+          <p class="eyebrow">Mocked with your company name</p>
+          <h2 id="mockupTitle">Homeowner sees options. You get the lead.</h2>
+        </div>
+        <div class="mockup-flow" aria-label="Quote flow">
+          <div>
+            <span>1</span>
+            <strong>Roof basics</strong>
+            <p>Address, area, material, pitch, tear-off, and timing.</p>
+          </div>
+          <div>
+            <span>2</span>
+            <strong>Live range</strong>
+            <p>Good / better / best totals plus a deposit estimate.</p>
+          </div>
+          <div>
+            <span>3</span>
+            <strong>Follow-up board</strong>
+            <p>Saved lead, copyable reply, email summary, and CSV export.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="close-band">
+        <div>
+          <p class="eyebrow">Fast setup</p>
+          <h2>First version in 48 hours.</h2>
+          <p>
+            Setup includes the branded quote page, pricing defaults, good/better/best proposal options,
+            QR-ready flyer, lead capture, and CSV export.
+          </p>
+        </div>
+        <div class="close-actions">
+          <a class="primary-link" id="checkoutLink" href="mailto:?subject=RoofQuote%20Sprint%20setup&body=I%20want%20the%20%24109%20instant%20roof%20quote%20setup.">Get setup for $109</a>
+          <button class="secondary-button" id="copyAuditButton" type="button">Copy audit summary</button>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script>window.ROOFQUOTE_CONFIG = {"manualPaymentMode":true};</script>
+    <script src="./audit.js"></script>
+  </body>
+</html>

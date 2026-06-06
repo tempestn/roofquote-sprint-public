@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RoofQuote Sprint Setup Intake</title>
+    <link rel="stylesheet" href="./intake.css" />
+  </head>
+  <body>
+    <header class="intake-topbar">
+      <a class="intake-brand" href="./sales.html" aria-label="RoofQuote Sprint">
+        <span>RQ</span>
+        <strong>RoofQuote Sprint</strong>
+      </a>
+      <nav aria-label="Intake actions">
+        <a id="demoLink" href="./index.html#estimator">Demo</a>
+        <a class="topbar-cta" id="paymentLink" href="mailto:?subject=RoofQuote%20Sprint%20setup&body=I%20want%20the%20%24109%20instant%20roof%20quote%20setup.">Pay $109</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="intake-hero">
+        <div>
+          <p class="eyebrow">Buyer intake</p>
+          <h1>Send setup details after payment.</h1>
+          <p id="contextLine">
+            This gives me the basics needed to turn the demo into a branded instant quote page in 48 hours.
+          </p>
+        </div>
+        <div class="summary-panel" aria-label="Setup summary">
+          <div>
+            <span>Setup</span>
+            <strong id="priceLabel">$109</strong>
+          </div>
+          <div>
+            <span>Turnaround</span>
+            <strong>48 hours</strong>
+          </div>
+          <div>
+            <span>Deliverable</span>
+            <strong>Quote page + lead export</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="intake-steps" aria-label="Setup process">
+        <article>
+          <span>01</span>
+          <strong>Pay the setup fee</strong>
+          <p>Use the checkout link from the outreach message or the button above.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <strong>Submit this form</strong>
+          <p>Send the company details, pricing defaults, materials, and booking link.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <strong>Review the page</strong>
+          <p>Get the first branded version within 48 hours for edits or launch.</p>
+        </article>
+      </section>
+
+      <section class="intake-layout">
+        <form
+          class="intake-form"
+          id="intakeForm"
+          name="roofquote-intake"
+          method="POST"
+          action="/thanks"
+          data-netlify="true"
+          enctype="multipart/form-data"
+        >
+          <input type="hidden" name="form-name" value="roofquote-intake" />
+          <input type="hidden" id="priceField" name="setup_price" value="109" />
+
+          <div class="form-heading">
+            <p class="eyebrow">Setup details</p>
+            <h2>What should the quote page use?</h2>
+          </div>
+
+          <div class="form-grid">
+            <label>
+              <span>Company name</span>
+              <input id="companyInput" name="company" autocomplete="organization" required />
+            </label>
+            <label>
+              <span>Website</span>
+              <input name="website" type="url" placeholder="https://example.com" />
+            </label>
+            <label>
+              <span>Service area</span>
+              <input id="serviceAreaInput" name="service_area" placeholder="Austin, Round Rock, Cedar Park" required />
+            </label>
+            <label>
+              <span>Public phone</span>
+              <input id="phoneInput" name="public_phone" autocomplete="tel" />
+            </label>
+            <label>
+              <span>Best contact name</span>
+              <input name="contact_name" autocomplete="name" />
+            </label>
+            <label>
+              <span>Best contact email</span>
+              <input name="contact_email" type="email" autocomplete="email" required />
+            </label>
+          </div>
+
+          <div class="form-grid">
+            <label>
+              <span>Logo or brand asset</span>
+              <input name="logo_file" type="file" accept="image/*,.pdf" />
+            </label>
+            <label>
+              <span>Booking link</span>
+              <input name="booking_link" type="url" placeholder="https://calendly.com/..." />
+            </label>
+          </div>
+
+          <label>
+            <span>Roofing materials to offer</span>
+            <textarea name="materials" rows="3" placeholder="Example: asphalt shingles, metal roofing, tile, TPO, repairs"></textarea>
+          </label>
+
+          <label>
+            <span>Typical price range or recent quote examples</span>
+            <textarea
+              name="price_defaults"
+              rows="4"
+              placeholder="Example: 20-25 square asphalt roof usually lands around $12k-$18k; metal starts near $22k."
+              required
+            ></textarea>
+          </label>
+
+          <div class="form-grid compact">
+            <label>
+              <span>Deposit percent</span>
+              <input name="deposit_percent" type="number" min="0" max="100" step="1" placeholder="25" />
+            </label>
+            <label>
+              <span>Preferred follow-up</span>
+              <select name="follow_up">
+                <option>Email lead details</option>
+                <option>Text/call lead details</option>
+                <option>CSV export only</option>
+                <option>Connect later to CRM</option>
+              </select>
+            </label>
+          </div>
+
+          <label>
+            <span>Warranty, financing, or sales notes</span>
+            <textarea name="notes" rows="4" placeholder="Anything the good/better/best proposals should mention."></textarea>
+          </label>
+
+          <div class="form-actions">
+            <button class="primary-button" type="submit">Submit setup details</button>
+            <a class="secondary-button" id="paymentLinkInline" href="mailto:?subject=RoofQuote%20Sprint%20setup&body=I%20want%20the%20%24109%20instant%20roof%20quote%20setup.">Pay first</a>
+          </div>
+        </form>
+
+        <aside class="close-panel">
+          <p class="eyebrow">Close script</p>
+          <h2>Fast handoff for calls</h2>
+          <p>
+            If the roofer says yes, send the checkout link first. After payment, send this intake URL so fulfillment can start immediately.
+          </p>
+          <div class="script-card">
+            <strong>Text after payment</strong>
+            <p id="handoffText">
+              Thanks. Please submit logo, service area, phone/email, material options, recent quote range, deposit percent, and booking link here.
+            </p>
+          </div>
+          <button class="secondary-button full-width" id="copyHandoffButton" type="button">Copy handoff text</button>
+        </aside>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script>window.ROOFQUOTE_CONFIG = {"manualPaymentMode":true};</script>
+    <script src="./intake.js"></script>
+  </body>
+</html>

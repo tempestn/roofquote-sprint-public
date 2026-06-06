@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RoofQuote Sprint</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#estimator" aria-label="RoofQuote Sprint home">
+        <span class="brand-mark" id="brandMark">RQ</span>
+        <span class="brand-copy">
+          <strong id="brandName">RoofQuote Sprint</strong>
+          <span id="brandSubtitle">Estimator desk for roofing leads</span>
+        </span>
+      </a>
+
+      <nav class="tabs" aria-label="Workspace views">
+        <button class="tab is-active" type="button" data-view-target="estimator" title="Estimator">
+          <i data-lucide="calculator" aria-hidden="true"></i>
+          <span>Estimator</span>
+        </button>
+        <button class="tab" type="button" data-view-target="leads" title="Lead board">
+          <i data-lucide="columns-3" aria-hidden="true"></i>
+          <span>Leads</span>
+        </button>
+        <button class="tab" type="button" data-view-target="offer" title="Sales offer">
+          <i data-lucide="badge-dollar-sign" aria-hidden="true"></i>
+          <span>$109 offer</span>
+        </button>
+      </nav>
+
+      <div class="top-actions">
+        <button class="ghost-button" type="button" id="copyPitchButton" title="Copy roofer pitch">
+          <i data-lucide="copy" aria-hidden="true"></i>
+          <span>Pitch</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="view is-active" data-view="estimator">
+        <div class="workspace-grid">
+          <form id="quoteForm" class="panel estimate-panel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">Lead intake</p>
+                <h1>Instant roof quote</h1>
+              </div>
+              <span class="status-pill" id="leadScorePill">Score 72</span>
+            </div>
+
+            <div class="form-grid">
+              <label>
+                <span>Homeowner</span>
+                <input name="homeowner" type="text" value="Jordan Miller" autocomplete="name" />
+              </label>
+              <label>
+                <span>Phone</span>
+                <input name="phone" type="tel" value="(512) 555-0184" autocomplete="tel" />
+              </label>
+              <label>
+                <span>Email</span>
+                <input name="email" type="email" value="jordan@example.com" autocomplete="email" />
+              </label>
+              <label>
+                <span>Address</span>
+                <input name="address" type="text" value="1842 Cedar Ridge Drive" autocomplete="street-address" />
+              </label>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <div class="form-grid metrics-grid">
+              <label>
+                <span>Roof area</span>
+                <div class="input-with-unit">
+                  <input name="area" type="number" min="600" max="9000" step="50" value="2450" />
+                  <span>sq ft</span>
+                </div>
+              </label>
+              <label>
+                <span>Stories</span>
+                <select name="stories">
+                  <option value="1">1 story</option>
+                  <option value="2" selected>2 stories</option>
+                  <option value="3">3 stories</option>
+                </select>
+              </label>
+              <label>
+                <span>Pitch</span>
+                <select name="pitch">
+                  <option value="low">Low</option>
+                  <option value="standard" selected>Standard</option>
+                  <option value="steep">Steep</option>
+                </select>
+              </label>
+              <label>
+                <span>Complexity</span>
+                <select name="complexity">
+                  <option value="simple">Simple</option>
+                  <option value="moderate" selected>Moderate</option>
+                  <option value="complex">Cut-up</option>
+                </select>
+              </label>
+            </div>
+
+            <fieldset class="segmented-field">
+              <legend>Material</legend>
+              <label>
+                <input type="radio" name="material" value="architectural" aria-label="Architectural shingles" checked />
+                <span title="Architectural shingles">Arch.</span>
+              </label>
+              <label>
+                <input type="radio" name="material" value="threeTab" />
+                <span>3-tab</span>
+              </label>
+              <label>
+                <input type="radio" name="material" value="metal" />
+                <span>Metal</span>
+              </label>
+              <label>
+                <input type="radio" name="material" value="tile" />
+                <span>Tile</span>
+              </label>
+            </fieldset>
+
+            <div class="form-grid">
+              <label>
+                <span>Tear-off layers</span>
+                <select name="tearOff">
+                  <option value="0">None</option>
+                  <option value="1" selected>1 layer</option>
+                  <option value="2">2 layers</option>
+                </select>
+              </label>
+              <label>
+                <span>Timeline</span>
+                <select name="timeline">
+                  <option value="browsing">Browsing</option>
+                  <option value="month" selected>This month</option>
+                  <option value="urgent">Leak / urgent</option>
+                </select>
+              </label>
+              <label>
+                <span>Margin</span>
+                <div class="input-with-unit">
+                  <input name="margin" type="number" min="8" max="45" step="1" value="22" />
+                  <span>%</span>
+                </div>
+              </label>
+              <label>
+                <span>Deposit</span>
+                <div class="input-with-unit">
+                  <input name="deposit" type="number" min="5" max="75" step="5" value="25" />
+                  <span>%</span>
+                </div>
+              </label>
+            </div>
+
+            <fieldset class="checkbox-grid">
+              <legend>Add-ons</legend>
+              <label>
+                <input type="checkbox" name="addon" value="gutters" />
+                <span>Gutters</span>
+              </label>
+              <label>
+                <input type="checkbox" name="addon" value="skylights" checked />
+                <span>Skylights</span>
+              </label>
+              <label>
+                <input type="checkbox" name="addon" value="ventilation" checked />
+                <span>Ventilation</span>
+              </label>
+              <label>
+                <input type="checkbox" name="addon" value="permit" />
+                <span title="Permit handling">Permits</span>
+              </label>
+            </fieldset>
+
+            <div class="button-row">
+              <button class="primary-button" type="button" id="saveLeadButton" title="Save lead">
+                <i data-lucide="save" aria-hidden="true"></i>
+                <span>Save lead</span>
+              </button>
+              <button class="ghost-button" type="button" id="resetButton" title="Reset demo">
+                <i data-lucide="rotate-ccw" aria-hidden="true"></i>
+                <span>Reset</span>
+              </button>
+            </div>
+          </form>
+
+          <aside class="panel proposal-panel">
+            <div class="roof-visual">
+              <img src="./assets/roof-estimator-hero.png" alt="Aerial roof with measurement overlay" />
+              <div class="visual-stat visual-stat-a">
+                <span>Waste</span>
+                <strong id="wasteFactor">12%</strong>
+              </div>
+              <div class="visual-stat visual-stat-b">
+                <span>Squares</span>
+                <strong id="squaresCount">27.4</strong>
+              </div>
+            </div>
+
+            <div class="proposal-header">
+              <div>
+                <p class="eyebrow">Proposal preview</p>
+                <h2 id="proposalAddress">1842 Cedar Ridge Drive</h2>
+              </div>
+              <div class="range-block">
+                <span>Likely range</span>
+                <strong id="priceRange">$18,820 - $23,990</strong>
+              </div>
+            </div>
+
+            <div class="option-stack" id="optionStack" aria-live="polite"></div>
+
+            <div class="proposal-details">
+              <div>
+                <span>Deposit</span>
+                <strong id="depositAmount">$5,120</strong>
+              </div>
+              <div>
+                <span>Monthly</span>
+                <strong id="monthlyAmount">$418</strong>
+              </div>
+              <div>
+                <span>Timeline</span>
+                <strong id="installWindow">2-3 days</strong>
+              </div>
+            </div>
+
+            <div class="scope-box">
+              <h3>Scope</h3>
+              <p id="scopeText"></p>
+            </div>
+
+            <section class="payment-request-box" aria-labelledby="paymentRequestDraftTitle">
+              <div class="payment-request-heading">
+                <div>
+                  <p class="eyebrow">Invoice handoff</p>
+                  <h3 id="paymentRequestDraftTitle">Deposit request draft</h3>
+                </div>
+                <button class="ghost-button compact-button" type="button" id="copyDepositRequestButton" title="Copy deposit request">
+                  <i data-lucide="receipt" aria-hidden="true"></i>
+                  <span>Request</span>
+                </button>
+              </div>
+              <div class="payment-request-grid">
+                <div>
+                  <span>Selected option</span>
+                  <strong id="paymentOptionName">Better</strong>
+                </div>
+                <div>
+                  <span>Invoice amount</span>
+                  <strong id="paymentInvoiceAmount">$5,120</strong>
+                </div>
+                <div>
+                  <span>Balance</span>
+                  <strong id="paymentBalanceAmount">$15,360</strong>
+                </div>
+              </div>
+              <p id="paymentRequestNote"></p>
+            </section>
+
+            <section class="snapshot-box" aria-labelledby="snapshotTitle">
+              <div class="snapshot-heading">
+                <div>
+                  <p class="eyebrow">Pre-measurement snapshot</p>
+                  <h3 id="snapshotTitle">Report-ready summary</h3>
+                </div>
+                <span id="reportLeadFit">Warm lead</span>
+              </div>
+              <div class="snapshot-grid">
+                <div>
+                  <span>Measured area</span>
+                  <strong id="reportMeasuredArea">2,744 sq ft</strong>
+                </div>
+                <div>
+                  <span>Shingle bundles</span>
+                  <strong id="reportBundles">83</strong>
+                </div>
+                <div>
+                  <span>Underlayment</span>
+                  <strong id="reportUnderlayment">3 rolls</strong>
+                </div>
+                <div>
+                  <span>Measurement note</span>
+                  <strong id="reportMeasurementNote">Verify before production</strong>
+                </div>
+              </div>
+              <p id="reportQualification"></p>
+              <p id="reportNextStep"></p>
+            </section>
+
+            <section class="material-order-box" aria-labelledby="materialOrderTitle">
+              <div class="material-order-heading">
+                <div>
+                  <p class="eyebrow">Material order draft</p>
+                  <h3 id="materialOrderTitle">Supplier-ready starter list</h3>
+                </div>
+                <button class="ghost-button compact-button" type="button" id="copyMaterialOrderButton" title="Copy material order">
+                  <i data-lucide="package-check" aria-hidden="true"></i>
+                  <span>Order</span>
+                </button>
+              </div>
+              <div class="material-order-grid">
+                <div>
+                  <span>Shingles</span>
+                  <strong id="materialOrderBundles">83 bundles</strong>
+                </div>
+                <div>
+                  <span>Underlayment</span>
+                  <strong id="materialOrderUnderlayment">3 rolls</strong>
+                </div>
+                <div>
+                  <span>Starter/ridge</span>
+                  <strong id="materialOrderStarter">2 lines</strong>
+                </div>
+                <div>
+                  <span>Accessories</span>
+                  <strong id="materialOrderAccessories">4 items</strong>
+                </div>
+              </div>
+              <p id="materialOrderNote"></p>
+            </section>
+
+            <div class="button-row dense">
+              <button class="primary-button" type="button" id="copyFollowupButton" title="Copy follow-up">
+                <i data-lucide="message-square-text" aria-hidden="true"></i>
+                <span>Copy</span>
+              </button>
+              <button class="ghost-button" type="button" id="copySnapshotButton" title="Copy snapshot">
+                <i data-lucide="clipboard-list" aria-hidden="true"></i>
+                <span>Snapshot</span>
+              </button>
+              <button class="ghost-button" type="button" id="emailProposalButton" title="Email proposal">
+                <i data-lucide="mail" aria-hidden="true"></i>
+                <span>Email</span>
+              </button>
+              <button class="ghost-button" type="button" id="printProposalButton" title="Print proposal">
+                <i data-lucide="printer" aria-hidden="true"></i>
+                <span>Print</span>
+              </button>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="view" data-view="leads">
+        <div class="panel board-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Pipeline</p>
+              <h1>Saved roofing leads</h1>
+            </div>
+            <div class="button-row dense">
+              <button class="ghost-button" type="button" id="exportCsvButton" title="Export CSV">
+                <i data-lucide="download" aria-hidden="true"></i>
+                <span>CSV</span>
+              </button>
+              <button class="ghost-button danger" type="button" id="clearLeadsButton" title="Clear leads">
+                <i data-lucide="trash-2" aria-hidden="true"></i>
+                <span>Clear</span>
+              </button>
+            </div>
+          </div>
+          <div class="pipeline-stats" id="pipelineStats" aria-live="polite"></div>
+          <div class="board-grid" id="leadBoard"></div>
+        </div>
+      </section>
+
+      <section class="view" data-view="offer">
+        <div class="offer-grid">
+          <section class="panel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">One-week revenue target</p>
+                <h1>$109 setup sprint</h1>
+              </div>
+              <span class="status-pill warm">One sale = goal</span>
+            </div>
+
+            <div class="offer-price">
+              <span>Setup</span>
+              <strong>$109</strong>
+              <small>then $19/mo optional hosting/support</small>
+            </div>
+
+            <div class="offer-list">
+              <div>
+                <i data-lucide="globe" aria-hidden="true"></i>
+                <span>Branded quote link</span>
+              </div>
+              <div>
+                <i data-lucide="scan-line" aria-hidden="true"></i>
+                <span>QR-ready campaign URL</span>
+              </div>
+              <div>
+                <i data-lucide="file-text" aria-hidden="true"></i>
+                <span>Good / better / best proposal</span>
+              </div>
+              <div>
+                <i data-lucide="receipt" aria-hidden="true"></i>
+                <span>Deposit request copy</span>
+              </div>
+              <div>
+                <i data-lucide="package-check" aria-hidden="true"></i>
+                <span>Material order draft</span>
+              </div>
+              <div>
+                <i data-lucide="table-properties" aria-hidden="true"></i>
+                <span>Lead CSV export</span>
+              </div>
+              <div>
+                <i data-lucide="list-checks" aria-hidden="true"></i>
+                <span>Follow-up pipeline</span>
+              </div>
+            </div>
+
+            <label class="checkout-label">
+              <span>Checkout or booking URL</span>
+              <input id="checkoutUrlInput" type="url" placeholder="https://buy.stripe.com/..." />
+            </label>
+
+            <div class="button-row">
+              <a class="primary-button as-link" id="checkoutButton" href="mailto:?subject=RoofQuote%20Sprint%20setup&body=I%20want%20the%20%24109%20instant%20roof%20quote%20setup." target="_blank" rel="noreferrer">
+                <i data-lucide="external-link" aria-hidden="true"></i>
+                <span>Open</span>
+              </a>
+              <button class="ghost-button" type="button" id="copyOfferButton" title="Copy offer">
+                <i data-lucide="copy" aria-hidden="true"></i>
+                <span>Offer</span>
+              </button>
+            </div>
+          </section>
+
+          <section class="panel script-panel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">Outbound</p>
+                <h1>Founder sales script</h1>
+              </div>
+            </div>
+            <div class="script-box" id="salesScript"></div>
+            <div class="button-row dense">
+              <button class="primary-button" type="button" id="copyScriptButton" title="Copy script">
+                <i data-lucide="copy-check" aria-hidden="true"></i>
+                <span>Copy script</span>
+              </button>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <form name="roofquote_lead" method="POST" data-netlify="true" netlify hidden>
+      <input type="hidden" name="form-name" value="roofquote_lead" />
+      <input type="hidden" name="createdAt" />
+      <input type="hidden" name="updatedAt" />
+      <input type="hidden" name="stage" />
+      <input type="hidden" name="paymentStatus" />
+      <input type="hidden" name="nextAction" />
+      <input type="hidden" name="actionStatus" />
+      <input type="hidden" name="homeowner" />
+      <input type="hidden" name="phone" />
+      <input type="hidden" name="email" />
+      <input type="hidden" name="address" />
+      <input type="hidden" name="material" />
+      <input type="hidden" name="area" />
+      <input type="hidden" name="score" />
+      <input type="hidden" name="total" />
+      <input type="hidden" name="range" />
+      <input type="hidden" name="depositPercent" />
+      <input type="hidden" name="depositAmount" />
+      <input type="hidden" name="balanceAmount" />
+      <input type="hidden" name="materialOrder" />
+      <input type="hidden" name="timeline" />
+      <input type="hidden" name="sourcePage" />
+    </form>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script>window.ROOFQUOTE_CONFIG = {"manualPaymentMode":true};</script>
+    <script src="./app.js"></script>
+  </body>
+</html>
